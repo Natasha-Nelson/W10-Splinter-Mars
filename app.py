@@ -11,6 +11,7 @@ mongo = PyMongo(app)
 # Set up route for homepage to connect to the index template and mars DB in MongoDB
 @app.route("/")
 def index():
+   mars = mongo.db.mars
    mars = mongo.db.mars.find_one()
    return render_template("index.html", mars=mars)
 
@@ -18,7 +19,7 @@ def index():
 @app.route("/scrape")
 def scrape():
    mars = mongo.db.mars
-   mars_data = correct.scrape_all()
+   mars_data = scraping.scrape_all()
    mars.update({}, mars_data, upsert=True)
    return redirect('/', code=302)
 

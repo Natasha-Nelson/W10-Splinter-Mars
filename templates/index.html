@@ -27,20 +27,25 @@
                 </div>
               </div>
             </div>
-          </div>
-        <!-- Featured Image -->
+        </div>
+     <!-- Section for Featured Image and Facts table -->
         <div class="row" id="mars-featured-image">
             <div class="col-md-8">
-              <h2>Featured Mars Image</h2>
-              <img src="{{ mars.featured_image }}" class="img-responsive" alt="Responsive image"/>
+                <h2>Featured Mars Image</h2>
+                <img
+                    src="{{mars.featured_image }}"
+                    class="img-responsive"
+                    alt="Responsive image"
+                />
             </div>
+            <div class="col-md-4">
             <!-- Mars Facts -->
-            <div class="row" id="mars-facts">
-                <h4>Mars Facts</h4>
-                {{ mars.facts | safe }}
+                <div class="row" id="mars-facts">
+                    <h4>Mars Facts</h4>
+                    {{ mars.facts | safe }}
+                </div>
             </div>
         </div>
-
     </div>
-</body>
+  </body>
 </html>
